@@ -1,0 +1,134 @@
+.barmenu {
+	min-height: 100vh;
+}
+
+.cards {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	grid-gap: 30px;
+}
+
+.stroke {
+	transition: fill .6s ease;
+}
+
+.loading {
+	font-weight: 700;
+	font-size: 32px;
+	text-align: center;
+	animation: loading 1s infinite ease;
+}
+
+.emptyCards {
+	font-size: 26px;
+}
+
+@keyframes loading {
+	0% {
+		opacity: 0.5;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+.card {
+	position: relative;
+	overflow: hidden;
+	margin-bottom: 1em;
+	border-radius: 8px;
+	box-shadow: 0px 0px 5px 0 #2f2f2f;
+
+	&:hover &__imagewrapper {
+		&>img {
+			transform: scale(1.1);
+		}
+
+	}
+
+	&__imagewrapper {
+		width: 100%;
+		height: 100%;
+
+		&>img {
+			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			transition: transform .6s ease;
+		}
+	}
+
+	&__description {
+		box-sizing: border-box;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 1em;
+		background: rgba(0, 0, 0, 0.3);
+		backdrop-filter: blur(11px);
+	}
+
+	&__title {
+		font-weight: 700;
+		font-size: 26px;
+	}
+
+	&__id {
+		color: #ccc;
+		font-weight: 300;
+		font-size: 11px;
+	}
+
+	&__buttons {
+		display: flex;
+		align-items: center;
+	}
+
+	&__like {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 35px;
+		height: 35px;
+		border-radius: 50%;
+		padding: .5rem;
+		outline: none;
+		border: none;
+		background: none;
+
+		&_dislike {
+			transition: opacity .6s;
+
+			&:hover {
+				opacity: .6;
+			}
+		}
+
+		&:hover {
+			.card__svg {
+				fill: red;
+			}
+
+			.card__svgPath {
+				fill: red;
+			}
+
+			cursor: pointer;
+		}
+	}
+
+	&__svg {
+		pointer-events: none;
+	}
+
+}
+
+path {
+	transition: fill .6s;
+}
