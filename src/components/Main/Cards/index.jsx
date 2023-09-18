@@ -14,7 +14,6 @@ const Cards = (props) => {
 						<div className={style.card__description}>
 							<div className={style.card__titlewrapper}>
 								<h2 className={style.card__title}>{el.strDrink}</h2>
-								<p>{`${el.isLike}`}</p>
 								<span className={style.card__id}>art. {el.idDrink}</span>
 							</div>
 							<div className={style.card__buttons}>
