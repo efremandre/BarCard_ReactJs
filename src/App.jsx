@@ -7,11 +7,20 @@ function App() {
 
 	let [cards, setCards] = useState([])
 	let [filter, setfilter] = useState(false)
+	let [loading, setLoading] = useState(false)
 
 	useEffect(() => {
+
 		fetch('https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic')
-			.then(response => response.json())
-			.then(data => setCards(data.drinks.map(c => !c.isLike ? { ...c, isLike: false } : c)))
+			.then(response => {
+				setLoading(true)
+				return response.json()
+			})
+			.then(data => {
+				setLoading(false)
+				return setCards(data.drinks.map(c => !c.isLike ? { ...c, isLike: false } : c))
+			})
+
 	}, [])
 
 	const like = (id) => {
@@ -44,6 +53,7 @@ function App() {
 		</header>
 
 		< Main
+			loading={loading}
 			cards={filterCards}
 			like={like}
 			likeFilter={likeFilter}

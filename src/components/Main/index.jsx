@@ -12,6 +12,7 @@ const Main = (props) => {
 					filter={props.filter} />
 
 				<Cards
+					loading={props.loading}
 					cards={props.cards}
 					like={props.like}
 					buttons={props.buttons}
