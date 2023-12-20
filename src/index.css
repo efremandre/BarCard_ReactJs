@@ -44,6 +44,7 @@ ul {
 	background-color: #000;
 	filter: blur(0.2em) contrast(2);
 	animation: loaderSpin 4s infinite linear;
+	}
 
 	@keyframes loaderSpin {
 		to {
@@ -51,7 +52,7 @@ ul {
 		}
 	}
 
-	&>i {
+	/* &>i {
 		position: absolute;
 		left: 10em;
 		top: 10em;
@@ -79,9 +80,9 @@ ul {
 			100% {
 				transform: rotateZ(var(--rz, 0)) translateY(4em) translate(var(--tx, 0), var(--ty, 0)) scale(0);
 			}
-		}
+		} */
 
-		@for $i from 0 to 72 {
+		/* @for $i from 0 to 72 {
 			&:nth-child(#{$i + 1}) {
 				--rz: #{$i * 5}deg;
 				--delay: #{4s / 72 * $i - 4s};
@@ -89,5 +90,5 @@ ul {
 				--ty: #{random(1000) / 125 - 2.5}em;
 				--hue: #{$i * 5};
 			}
-		}
-	}
+		} */
+	/* } */

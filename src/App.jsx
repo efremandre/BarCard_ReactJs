@@ -63,7 +63,7 @@ function App() {
 		<footer className='footer'>
 			<div className="container">
 				<p className="footer__content">
-					<a href="https://t.me/efremandre" target="_blank" title='created by efrenadre' rel="noopener noreferrer">created by efrenadre</a>
+					<a href="https://t.me/efremandre" target="_blank" title='created by efrenadre' rel="noopener noreferrer">created by efremadre</a>
 				</p>
 			</div>
 		</footer>
